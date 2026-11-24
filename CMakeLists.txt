@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
 project(FrostSynth VERSION 0.1.0)
 
-# Clone JUCE naast dit bestand:  git clone https://github.com/juce-framework/JUCE.git
+# Neemt de Visual C++ onderdelen mee in de plugin zelf
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+
 add_subdirectory(JUCE)
 
 juce_add_plugin(FrostSynth
